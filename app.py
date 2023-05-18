@@ -61,7 +61,7 @@ def main() :
 
 def predict_class_potato(image) :
     with st.spinner('Loading Model...'):
-        classifier_model = keras.models.load_model(r'./models/CNN_Potato/potatoes_cnn_model.h5', compile = False)
+        classifier_model = keras.models.load_model(r'./models/CNN_Potato/final_cnn_model_potato_disease.h5', compile = False)
 
     shape = ((256,256,3))
     model = keras.Sequential([hub.KerasLayer(classifier_model, input_shape = shape)]) 
@@ -77,7 +77,7 @@ def predict_class_potato(image) :
     return final_pred, confidence
 def predict_class_tomato(image) :
     with st.spinner('Loading Model...'):
-        classifier_model = keras.models.load_model(r'./models/VGG19/vgg19_model.h5', compile = False)
+        classifier_model = keras.models.load_model(r'./models/CNN_Tomato/final_cnn_model_tomato_disease.h5', compile = False)
 
     shape = ((224,224,3))
     model = keras.Sequential([hub.KerasLayer(classifier_model, input_shape = shape)]) 
